@@ -2,7 +2,8 @@
 
 A simple yet powerful Grocery Shop Management System built using Flask and SQLite. It features both Admin and Customer interfaces to manage products, customers, sales, and shopping seamlessly.
 
-🔧 Technologies Used
+## 🔧 Technologies Used
+
 🐍 Python (Flask)
 
 💾 MySql
@@ -11,8 +12,10 @@ A simple yet powerful Grocery Shop Management System built using Flask and SQLit
 
 🖥️ Visual Studio Code
 
-📌 Features
+## 📌 Features
+
 👨‍💼 Admin Panel
+
 Add, View, Update, Delete Products
 
 Add and View Customers
@@ -21,7 +24,8 @@ View Sales and Billing History
 
 Clean dashboard with navigation
 
-🛍️ Shop Interface
+## 🛍️ Shop Interface
+
 Browse available products
 
 Add to bucket (cart)
@@ -30,7 +34,8 @@ Buy Now functionality with quantity management
 
 Real-time bill generation
 
-🗂️ Project Structure
+## 🗂️ Project Structure
+
 ```
 grahak-bhandar/
 │
@@ -48,7 +53,8 @@ grahak-bhandar/
 └── README.md                    # Project Documentation
 
 ```
-⚙️ Setup Instructions
+## ⚙️ Setup Instructions
+
 Clone the repository:
 
 ```
@@ -73,14 +79,16 @@ Open your browser and visit:
 http://127.0.0.1:5000/
 ```
 
-🗃️ Database Schema
+## 🗃️ Database Schema
+
 products(id, name, category, price, quantity)
 
 customers(id, name, phone)
 
 sales(id, product_name, price, quantity, total, timestamp)
 
-📸 Screenshots
+## 📸 Screenshots
+
 Add screenshots of:
 
 Home Page
@@ -97,7 +105,8 @@ Shop Interface
 ![image](https://github.com/user-attachments/assets/6479a768-2502-4b2a-8636-9b7906fa5cca)
 
 
-📈 Future Enhancements
+## 📈 Future Enhancements
+
 Admin login system
 
 Customer authentication & registration
@@ -108,7 +117,8 @@ Email/SMS invoice generation
 
 Responsive mobile-friendly layout
 
-🙌 Acknowledgment
+## 🙌 Acknowledgment
+
 This project was developed as part of a DBMS Mini Project at Pimpri Chinchwad University .
 
 Developed by: Patil Rameshwar D
