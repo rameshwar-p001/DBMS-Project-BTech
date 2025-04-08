@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Welcome to the Shop</h1>
+        <p>Explore the best products and manage your shopping experience</p>
+    </section>
+
+    <div class="shop-container">
+        <h2>Available Products</h2>
+        <table class="modern-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Add to Bucket</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product[1] }}</td>
+                    <td>{{ product[2] }}</td>
+                    <td>${{ "%.2f"|format(product[3]) }}</td>
+                    <td>{{ product[4] }}</td>
+                    <td>
+                        <form method="POST">
+                            <input type="hidden" name="product_name" value="{{ product[1] }}">
+                            <input type="number" name="quantity" placeholder="Quantity" required min="1" max="{{ product[4] }}">
+                            <button type="submit" class="add-to-bucket">Add to Bucket</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Your Bucket</h2>
+        <table class="modern-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product_name, product_data in cart.items() %}
+                <tr>
+                    <td>{{ product_name }}</td>
+                    <td>${{ "%.2f"|format(product_data['price']) }}</td>
+                    <td>{{ product_data['quantity'] }}</td>
+                    <td>${{ "%.2f"|format(product_data['price'] * product_data['quantity']) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Total: ${{ "%.2f"|format(cart_total) }}</h3>
+
+        <form method="POST">
+            <button type="submit" name="buy_now" class="buy-now">Buy Now</button>
+        </form>
+
+        {% if bill %}
+        <h2>Bill</h2>
+        <table class="modern-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product_name, product_data in bill.items() %}
+                <tr>
+                    <td>{{ product_name }}</td>
+                    <td>${{ "%.2f"|format(product_data['price']) }}</td>
+                    <td>{{ product_data['quantity'] }}</td>
+                    <td>${{ "%.2f"|format(product_data['price'] * product_data['quantity']) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Total Bill: ${{ "%.2f"|format(bill_total) }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

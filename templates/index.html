@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Grahak Bhandar</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                <li><a href="{{ url_for('admin') }}">Admin Panel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Grahak Bhandar</h1>
+            <p>Your one-stop destination to manage your grocery store and shop amazing products.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('admin') }}" class="cta-button">Admin Panel</a>
+                <a href="{{ url_for('shop') }}" class="cta-button">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <div class="content-container">
+            <div class="card">
+                <h2>Shop</h2>
+                <p>Explore the best products available in our store. Find everything you need for your grocery store.</p>
+                <a href="{{ url_for('shop') }}" class="cta-button">Browse Shop</a>
+            </div>
+            <div class="card">
+                <h2>Admin Panel</h2>
+                <p>Manage products, view sales, and handle customer orders with ease from the admin panel.</p>
+                <a href="{{ url_for('admin') }}" class="cta-button">Go to Admin Panel</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Grahak Bhandar. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
