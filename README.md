@@ -1,10 +1,10 @@
-** Grahak Bhandar 🛒
+** Grahak Bhandar 🛒**
 A simple yet powerful Grocery Shop Management System built using Flask and SQLite. It features both Admin and Customer interfaces to manage products, customers, sales, and shopping seamlessly.
 
 🔧 Technologies Used
 🐍 Python (Flask)
 
-💾 SQLite
+💾 MySql
 
 🌐 HTML5, CSS3 (External stylesheets only)
 
